@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mon site web</title>
+    <style>
+        body {
+            text-align: center;
+            background-image: url("/static/images/fond.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            opacity: 0,5;
+            color: rgb(75, 64, 149);
+        }
+
+        .welcome-box {
+            border: 5px solid #82bedf;
+            padding: 10px;
+            display: inline-block;
+        }
+
+        .menu {
+            margin-bottom: 20px;
+        }
+        
+        .menu a {
+            margin-right: 10px;
+        }
+
+
+       
+
+    </style>
+</head>
+<body>
+
+    <div class="menu">
+        <a href="/">Accueil</a>
+        <a href="/page1">Page 1</a>
+        <a href="/page2">Page 2</a>
+        <a href="/page3">Page 3</a>
+    </div>
+    
+    <div class="welcome-box">
+    <h1>Bienvenue sur mon site web !</h1>
+    </div>
+    <p>C'est ma page d'accueil.</p>
+    <img src="/static/images/logo.jpg" alt="Logo du site">
+    <h2>Calcul d'addition</h2>
+    <form action="/addition" method="post">
+        <input type="text" name="num1" placeholder="Nombre 1" required>
+        +
+        <input type="text" name="num2" placeholder="Nombre 2" required>
+        <br><br>
+        <input type="submit" value="Calculer">
+    </form>
+
+    {% if result %}
+    <h3>Résultat de l'addition : {{ result }}</h3>
+    {% endif %}
+
+
+</body>
+</html>
+
